@@ -16,6 +16,7 @@ export interface Project {
   liveUrl?: string;
   githubUrl?: string;
   role?: string;
+  featured?: boolean;
 }
 
 export interface Experience {

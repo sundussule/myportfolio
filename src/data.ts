@@ -61,6 +61,16 @@ export const initialPortfolioData: PortfolioData = {
       githubUrl: "https://github.com/sundussule/Bringo.git",
       role: "Solo Creator"
     },
+   {
+      id: "Sattva",
+      title: "Sattva Web Application",
+      description: "A responsive web application built with modern frontend technologies and clean architectural patterns.",
+      longDescription: "Sattva is a modern web application built using React, TypeScript, and Vite. It features a fully responsive layout using Tailwind CSS, structured type safety, and optimized build pipeline integration.",
+      technologies: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+      liveUrl: "https://sattva-alpha.vercel.app",
+      githubUrl: "https://github.com/sundussule/Sattva.git",
+      role: "Solo Creator"
+    },
   ],
   experiences: [
     {

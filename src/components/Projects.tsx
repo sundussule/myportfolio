@@ -1,3 +1,18 @@
+declare module 'react/jsx-runtime' {
+  export const Fragment: any;
+  export function jsx(type: any, props: any, key?: any): any;
+  export function jsxs(type: any, props: any, key?: any): any;
+}
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      [elemName: string]: any;
+    }
+    interface Element {}
+  }
+}
+
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ExternalLink, Github, Layers, X, Eye, ArrowRight } from 'lucide-react';
@@ -9,6 +24,11 @@ interface ProjectsProps {
 
 export default function Projects({ projects }: ProjectsProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const featuredProject = projects.find((project) => project.featured);
+  const regularProjects = featuredProject
+    ? projects.filter((project) => project.id !== featuredProject.id)
+    : projects;
 
   return (
     <section id="projects" className="py-24 bg-[#F5F5F5] border-y border-[#D1D1D1]">
@@ -48,52 +68,45 @@ export default function Projects({ projects }: ProjectsProps) {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {projects.map((project, idx) => {
-            // Let's make the 3rd project (or last project if 3 or more) full width to match the theme mockup!
-            const isFeaturedBanner = idx === 2 || (projects.length < 3 && idx === projects.length - 1 && projects.length === 1);
-            
-            if (isFeaturedBanner) {
-              return (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-50px' }}
-                  transition={{ duration: 0.6, delay: idx * 0.1 }}
-                  whileHover={{ y: -3 }}
-                  className="md:col-span-2 lg:col-span-3 bg-[#1A1A1A] text-white p-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 group cursor-pointer rounded shadow-lg relative overflow-hidden"
-                  onClick={() => setSelectedProject(project)}
-                >
-                  <div className="space-y-4 max-w-2xl relative z-10">
-                    <div className="flex items-center gap-4 font-mono text-[10px] text-neutral-400">
-                      <span className="opacity-60">0{idx + 1} / FEATURED WORK</span>
-                      <span>•</span>
-                      <span className="font-bold uppercase tracking-widest">{project.role || 'Software Engineer'}</span>
-                    </div>
-                    <h3 className="text-3xl font-light tracking-tight group-hover:italic transition-all">
-                      {project.title}
-                    </h3>
-                    <p className="text-xs text-neutral-300 leading-relaxed font-light">
-                      {project.description}
-                    </p>
-                    {/* Tech badges */}
-                    <div className="flex flex-wrap gap-2 pt-1">
-                      {project.technologies.map((tech) => (
-                        <span key={tech} className="font-mono text-[9px] text-neutral-300 bg-neutral-800/80 px-2.5 py-0.5 rounded border border-neutral-700">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="text-2xl font-light opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all text-white shrink-0 self-end sm:self-center">
-                    <ArrowRight size={24} />
-                  </div>
-                </motion.div>
-              );
-            }
+          {featuredProject && (
+            <motion.div
+              key={featuredProject.id}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              whileHover={{ y: -3 }}
+              className="md:col-span-2 lg:col-span-3 bg-[#1A1A1A] text-white p-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 group cursor-pointer rounded shadow-lg relative overflow-hidden"
+              onClick={() => setSelectedProject(featuredProject)}
+            >
+              <div className="space-y-4 max-w-2xl relative z-10">
+                <div className="flex items-center gap-4 font-mono text-[10px] text-neutral-400">
+                  <span className="opacity-60">FEATURED WORK</span>
+                  <span>•</span>
+                  <span className="font-bold uppercase tracking-widest">{featuredProject.role || 'Software Engineer'}</span>
+                </div>
+                <h3 className="text-3xl font-light tracking-tight group-hover:italic transition-all">
+                  {featuredProject.title}
+                </h3>
+                <p className="text-xs text-neutral-300 leading-relaxed font-light">
+                  {featuredProject.description}
+                </p>
+                <div className="flex flex-wrap gap-2 pt-1">
+                  {featuredProject.technologies.map((tech) => (
+                    <span key={tech} className="font-mono text-[9px] text-neutral-300 bg-neutral-800/80 px-2.5 py-0.5 rounded border border-neutral-700">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-            // Alternating backgrounds for standard cards
+              <div className="text-2xl font-light opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all text-white shrink-0 self-end sm:self-center">
+                <ArrowRight size={24} />
+              </div>
+            </motion.div>
+          )}
+
+          {regularProjects.map((project, idx) => {
             const bgClass = idx % 2 === 0 ? 'bg-white' : 'bg-[#EAEAEA]';
 
             return (
