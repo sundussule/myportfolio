@@ -11,9 +11,9 @@ export const initialPortfolioData: PortfolioData = {
   linkedin: "https://www.linkedin.com/in/sundus-suleiman-5841b134b?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
   resumeUrl: "#",
   education: {
-    degree: "Bachelor of Science in Software Engineering",
+    degree: "Diploma in Software Engineering",
     institution: "Zetech University",
-    duration: "2022 - 2026 (Expected)",
+    duration: "2024 - 2026 (Expected)",
     grade: "Track: First Class Honors",
     description: "Rigorous academic curriculum with a strong focus on practical software development, architectural design, database systems, and modern web application development. Active member of the university's Tech Innovation Club.",
     highlights: [
