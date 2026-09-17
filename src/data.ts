@@ -42,35 +42,25 @@ export const initialPortfolioData: PortfolioData = {
   ],
   projects: [
     {
-      id: "sundus-peace",
-      title: "Sundus Peace Platform",
-      description: "An elegant, interactive web portal hosted on Cloud Run, designed to provide a serene space for mindful digital engagement.",
-      longDescription: "The Sundus Peace Platform is a fully responsive web application engineered to demonstrate modern layout techniques, seamless client-side state synchronization, and containerized deployment pipelines. It features micro-interactions and smooth transitions, representing a sanctuary-like digital canvas for modern users.",
-      technologies: ["React", "Tailwind CSS", "Motion", "Cloud Run", "Node.js"],
-      liveUrl: "https://sundus-peace-72867870240.europe-west3.run.app/",
-      githubUrl: "#",
+      id: "Effor",
+      title: "Effor E-Commerce Storefront",
+      description: "A modern, responsive e-commerce web application featuring item filtering and cart management.",
+      longDescription: "Effor is a sleek e-commerce storefront designed for seamless browsing and online shopping. Built with React and Express, it provides real-time product filtering and secure dynamic routing.",
+      technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Express", "Prisma", "TSQL"],
+      liveUrl: "https://effor-v2.vercel.app",
+      githubUrl: "https://github.com/sundussule/EfforV2.git",
       role: "Lead Software Architect"
     },
     {
-      id: "laptop-sandbox",
-      title: "Device Control & Terminal",
-      description: "A fun, keyboard-driven interactive CLI simulation playing homage to my early days of playing with laptops.",
-      longDescription: "This interactive web shell mimics classic operating system prompts, allowing users to run simulated system diagnostics, explore mock storage directories, and run memory checks. Built with pure custom state machines to handle nesting command histories.",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Custom State Engines", "Shell Scripting"],
-      liveUrl: "#",
-      githubUrl: "#",
+      id: "Bringo",
+      title: "Bringo On-Demand Delivery Marketplace",
+      description: "An interactive multi-category marketplace for local food, grocery, health, and courier delivery services.",
+      longDescription: "Bringo is an on-demand local delivery application that connects users with nearby restaurants, supermarkets, pharmacies, and express couriers through localized search, category filtering, and order tracking.",
+      technologies: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+      liveUrl: "https://bringo-ruby.vercel.app",
+      githubUrl: "https://github.com/sundussule/Bringo.git",
       role: "Solo Creator"
     },
-    {
-      id: "zetech-navigator",
-      title: "Academic Path Optimizer",
-      description: "A student-centric scheduling helper that simplifies module planning, grades estimation, and credit tracking.",
-      longDescription: "Designed to address student planning challenges at Zetech University, this tool implements a custom sorting algorithm that maps out prerequisite courses and optimizes graduation paths based on student semester availability and grade goals.",
-      technologies: ["JavaScript", "HTML5 Canvas", "Tailwind CSS", "Algorithmic Sorting"],
-      liveUrl: "#",
-      githubUrl: "#",
-      role: "Full-Stack Contributor"
-    }
   ],
   experiences: [
     {
