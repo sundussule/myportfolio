@@ -4,7 +4,7 @@ export const initialPortfolioData: PortfolioData = {
   name: "Sundus Suleiman Rashid",
   title: "Software Engineer & Creative Developer",
   tagline: "Driven by a lifelong curiosity for technology to craft beautiful, functional, and highly optimized digital architectures.",
-  about: "I am a 20-year-old software engineering student currently pursuing my credentials at Zetech University. My path in technology began with a simple fascination: I was always deeply intrigued by how computers worked and spent countless hours playing with my laptop. Today, I translate that playful curiosity into elegant code, designing secure, performant, and user-friendly web solutions that solve real-world problems.",
+  about: "Hi, I'm Sundus Suleiman Rashid. I'm a software developer focused on building secure, responsive web apps and clean backend architecture.",
   email: "sundussuleiman83@gmail.com",
   phone: "+254118304952",
   github: "https://github.com/settings/profile",

@@ -69,7 +69,7 @@ export default function Hero({ name, title, tagline, about, degreeName }: HeroPr
           </motion.h2>
           
           <motion.h1 variants={itemVariants} className="text-4xl sm:text-6xl font-extrabold tracking-tighter text-[#1A1A1A] leading-[0.95] mb-6">
-            From playing with laptops to <span className="font-serif italic font-normal text-stone-600 block sm:inline">engineering tomorrow's</span> software.
+            Turning complex technical challenges <span className="font-serif italic font-normal text-stone-600 block sm:inline">into</span> simple, elegant software.
           </motion.h1>
 
           <motion.p variants={itemVariants} className="text-base sm:text-lg font-mono text-neutral-700 font-medium mb-6 leading-relaxed">
